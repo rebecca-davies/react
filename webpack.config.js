@@ -1,5 +1,6 @@
 const prod = process.env.NODE_ENV === 'production';
 
+const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -27,8 +28,12 @@ module.exports = {
   },
   devtool: prod ? undefined : 'source-map',
   plugins: [
+    new InterpolateHtmlPlugin({
+        PUBLIC_URL: 'static' 
+    }),
     new HtmlWebpackPlugin({
       template: 'index.html',
+      favicon: './public/favicon.ico'
     }),
     new MiniCssExtractPlugin(),
   ],
