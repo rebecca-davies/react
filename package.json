@@ -4,7 +4,7 @@
   "description": "A template react app.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --port 3000 & npx tailwindcss -i ./src/input.css -o ./public/css/compiled.css --watch",
+    "start": "webpack-dev-server --port 3000 & npx tailwindcss -i ./src/assets/css/TailwindHook.css -o ./src/assets/css/Tailwind.css --watch",
     "build": "NODE_ENV=production webpack"
   },
   "author": "Rebecca Davies",
