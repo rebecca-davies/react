@@ -8,17 +8,12 @@ class App extends Component {
           <h1 className="text-2xl">Welcome to your Application!</h1>
           <p className="text-lg font-thin">Happy coding!</p>
         </div>
-        <div className="absolute bottom-0 flex gap-5 mx-auto min-w-full justify-center p-5">
-          <p className="text-sm">Powered by:</p>
-          <p className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-500">
-            react,
+        <div className="absolute bottom-0 flex gap-1 mx-auto min-w-full justify-center p-5 text-sm">
+          <p>Powered by:</p>
+          <p className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-800">
+            react, webpack, tailwind
           </p>
-          <p className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-700">
-            tailwind,
-          </p>
-          <p className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-purple-800">
-            webpack,
-          </p>
+          <p>and lots of ❤️.</p>
         </div>
       </div>
     );
