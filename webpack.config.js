@@ -2,27 +2,28 @@ const prod = process.env.NODE_ENV === 'production';
 
 const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: prod ? 'production' : 'development',
-  entry: './src/index.tsx',
+  entry: './src/index.js',
   output: {
     path: __dirname + '/public/',
   },
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
-        exclude: /node_modules/,
-        resolve: {
-          extensions: ['.ts', '.tsx', '.js', '.json'],
-        },
-        use: 'ts-loader',
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       },
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
     ]
   },
@@ -33,9 +34,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: 'index.html',
-      favicon: './public/favicon.ico'
+      favicon: './public/static/favicon.ico'
     }),
-    new MiniCssExtractPlugin(),
   ],
 };
 
