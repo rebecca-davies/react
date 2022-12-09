@@ -1,10 +1,10 @@
 {
-  "name": "ezfx",
+  "name": "app",
   "version": "1.0.0",
-  "description": "A react app to create retro sound effects to suit your needs.",
+  "description": "A template react app.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --port 3000",
+    "start": "webpack-dev-server --port 3000 & npx tailwindcss -i ./src/input.css -o ./src/assets/css/output.css --watch",
     "build": "NODE_ENV=production webpack"
   },
   "author": "Rebecca Davies",
@@ -16,6 +16,7 @@
     "html-webpack-plugin": "^5.5.0",
     "interpolate-html-plugin": "^4.0.0",
     "mini-css-extract-plugin": "^2.7.0",
+    "tailwindcss": "^3.2.4",
     "ts-loader": "^9.4.1",
     "typescript": "^4.9.3",
     "webpack": "^5.75.0",
@@ -23,6 +24,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "framer-motion": "^7.6.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
